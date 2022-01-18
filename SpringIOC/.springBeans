@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.13.202006180736-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>src/main/java/ex03/applicationContext.xml</config>
+		<config>src/main/java/ex04/appContext.xml</config>
+		<config>src/main/java/ex05/emp.xml</config>
+		<config>src/main/java/ex06/appContext.xml</config>
+		<config>src/main/java/ex08/appContext.xml</config>
+		<config>src/main/java/ex09/appContext.xml</config>
+		<config>src/main/java/ex12/appContext.xml</config>
+		<config>src/main/java/ex10/appContext.xml</config>
+	</configs>
+	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

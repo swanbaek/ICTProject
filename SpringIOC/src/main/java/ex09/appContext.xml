@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 김철수, 기획부, 2500 생성자 인젝션으로 주입하기 => e3-->
+	<bean id="e3" class="ex09.Emp">
+		<constructor-arg type="java.lang.String" value="기획부" />
+		<constructor-arg type="java.lang.String" value="김철수"/>
+		<constructor-arg type="int" value="2500"/>		
+	</bean>
+</beans>

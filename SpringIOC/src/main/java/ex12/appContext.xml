@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!--[1] context네임스페이스를 추가함에 유의하자 -->
+	<!--[2] <context:property-placeholder/> 를 등록하자  -->
+	<context:property-placeholder location="classpath:admin.properties"/>
+	
+	<bean id="admin1" class="ex12.AdminInfo">
+		<property name="adminId" value="c##scott"/>
+		<property name="adminPwd" value="c##scott"/>
+	</bean>
+	
+	<bean id="admin2" class="ex12.AdminInfo">
+		<property name="adminId" value="${adminId}" />
+		<property name="adminPwd" value="${adminPwd}" />
+	</bean>
+
+</beans>

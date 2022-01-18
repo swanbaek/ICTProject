@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- MessabeBeanImpl 객체를 bean으로 등록하세요. id는 mb1으로 주세요 
+	setter를 통해 값을 넣어주자.(injection)
+		mb1.setName("김영희") 와 동일
+		mb1.setGreeting("새해 복 ~~~");
+	-->
+	<bean id="mb1" class="ex04.MessageBeanImpl">
+		<property name="name" value="김영희"/>
+		<property name="greeting">
+			<value>새해 복 많이 받으세요~</value>
+		</property>
+	</bean>
+	
+	<!--mb2를 bean으로 등록하고 인사말과 이름을 setter injection하세요
+		그런 뒤 mb2를 룩업해서 sayHello(), sayHi()도 호출해보기
+	  -->
+	<bean id="mb2" class="ex04.MessageBeanImpl">
+		<property name="greeting" value="하이~~"/>
+		<property name="name" value="토마스"/>
+	</bean>
+
+	<!--mb3를 빈으로 등록하기
+		name, greeting 주입하기
+		Date now=new Date();
+		mb3.setToday(now)
+		mb3에 Random객체도 주입하기
+	  -->	
+	<bean id="mb3" class="ex04.MessageBeanImpl">
+		<property name="greeting" value="반가워요"/>
+		<property name="name" value="알버트"/>
+		<property name="today" ref="now"/>
+		<property name="ran">
+			<ref bean="ran"/>
+		</property>
+	</bean>
+	
+	<bean id="now" class="java.util.Date"/>
+	<bean id="ran" class="java.util.Random"/>
+	
+</beans>
+
+
+
+

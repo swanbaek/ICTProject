@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<!--[1] ServiceImpl빈을 등록한 뒤에 List를 setter로 주입해보자.  -->
+	<bean id="s1" class="ex06.ServiceImpl">
+		<property name="list">
+			<list>
+				<value>Java</value>
+				<value>JSP</value>
+				<value>Spring</value>
+			</list>
+		</property>
+	</bean>
+	<!--  
+		List<String> list =new ArrayList<>();
+		list.add("Java"); list.add("JSP");...
+		
+		ServiceImple s1=new ServiceImpl();
+		s1.setList(list)
+	-->
+	
+	<bean id="s2" class="ex06.ServiceImpl">
+		<property name="map">
+			<map>
+				<entry>
+					<key>
+						<value>age</value>
+					</key>
+					<value>22</value>
+				</entry>
+				
+				<entry key="salary" value="4500"/>
+			</map>
+		</property>
+	</bean>
+	<!-- [2] Map을 주입해보자. 
+		Map<String,Integer> map=new HashMap<>();
+		map.put("age",22);
+		map.put("salary",4500)
+		
+		ServiceImpl s2=new ServiceImpl();
+		s2.setMap(map);
+	-->
+	
+	<!--[3] Set객체 주입하기  -->
+	<bean id="s3" class="ex06.ServiceImpl">
+		<property name="set">
+			<set>
+				<value>Oracle</value>
+				<value>MySQL</value>
+				<value>SQLite</value>
+			</set>
+		</property>
+	</bean>
+	<!--[3] Set객체 주입하기  
+		Set<String> set=new HashSet<>();
+		set.add("Oracle")...
+		....
+		s3.setSet(set);
+	-->
+	
+	<!-- [4] Properties주입하기 -->
+	<bean id="s4" class="ex06.ServiceImpl">
+		<property name="prop">
+			<props>
+				<prop key="user">SCOTT</prop>			
+				<prop key="pwd">tiger</prop>
+			</props>
+		</property>
+	</bean>
+	<!--  
+		[4] Properties주입
+		Properties prop=new Properties();
+		prop.setProperty("user","SCOTT");...
+		...
+		s4.setProp(prop);
+	-->
+
+</beans>
